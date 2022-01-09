@@ -1,0 +1,8 @@
+datasets/
+demo/flagged/
+demo/client/dist
+demo/client/node_modules
+demo/client/package-lock.json
+demo/client/tailwind.config.js
+demo/api/public
+demo/api/__pycache__
