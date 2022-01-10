@@ -1,7 +1,7 @@
 # Handwritten characters sequence recognizer
 
 ## Introduction
-The goal of our project is to answer a problem, a question: **can we recognize a handwritten character sequence using machine learning? **
+The goal of our project is to answer a problem, a question: **can we recognize a handwritten character sequence using machine learning?**
 
 The detection of handwritten digits is a known problem in this field. There are several examples of this type of project, using the MNIST dataset. 
 
@@ -81,7 +81,7 @@ There is our CNN model used for this case. We have found this model by trial and
 
 There is on schema witch explained who it works ? 
 
-![CNN for digit recognition - https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53](assets/img4.png)
+![CNN for digit recognition - https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53](docs/assets/img4.png)
 
 ### d. Model training
 Once this model is defined and compiled, we fit it with our training data, over 10 periods, in order to have an accuracy approaching 99%. This takes about 20 minutes.
