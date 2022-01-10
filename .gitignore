@@ -6,3 +6,4 @@ demo/client/package-lock.json
 demo/client/tailwind.config.js
 demo/api/public
 demo/api/__pycache__
+.DS_Store
