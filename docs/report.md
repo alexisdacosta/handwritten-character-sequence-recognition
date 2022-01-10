@@ -31,7 +31,7 @@ Our project mixes machine learning and image processing, in order to establish a
 To do so, we will divide our project in 3 steps. Each step will have a Jupyter notebook detailing its implementation. 
 
 1. Creation of a machine learning model for handwritten digit recognition and its training and results
-2. Creation of a machine learning model for handwritten character recognition (digits + letters) and its training and result
+2. Creation of a machine learning model for handwritten character recognition (digits + letters) and its training and results
 3. Use of these models for the recognition of a sequence of characters
 
 ## Datasets used
@@ -40,7 +40,7 @@ For that, we will use 2 datesets, recovered in .csv format from the site [Kaggle
 1. The MNIST handwritten digits dataset
 2. The EMNIST handwritten characters dataset (Extension of the MNSIT dataset) 
 
-The MNIST datasets are efficient and easy to use. Each line of the cdv corresponds to a 28x28 image. Each column except the first one corresponds to a pixel (pixel 0_1 pixel_0_1 ... pixel_27_27). The first column corresponds to its label, its value (for example 1, for an image corresponding to a digit 1). Its composition allows a simple interpretation by several machine learning tools, which we will detail below. This avoids large pre-processing steps. 
+The MNIST datasets are efficient and easy to use. Each line of the csv corresponds to a 28x28 image. Each column except the first one corresponds to a pixel (pixel 0_1 pixel_0_1 ... pixel_27_27). The first column corresponds to its label, its value (for example 1, for an image corresponding to a digit 1). Its composition allows a simple interpretation by several machine learning tools, which we will detail below. This avoids large pre-processing steps. 
 
 To retrieve them, for MNIST, several python libraries allow to obtain them directly, in particular Keras from the famous Tensorflow. However, for EMNIST, it is more complex, we must directly download the .csv from Kaggle. 
 
@@ -57,7 +57,7 @@ As explained above, for the rendering of the project, we will provide you with 3
 
 \newpage
 # I. Handwritten digit model creation, training and testing
-This part refers to the following Jupiter Notebook: [model_CNN_digits.ipynb](https://github.com/alexisdacosta/handwritten-sequence-character-recognition/blob/main/notebooks/model_CNN_digits.ipynb)
+This part refers to the following Jupiter Notebook: [model_CNN_digits.ipynb](https://github.com/alexisdacosta/handwritten-character-sequence-recognition/blob/master/notebooks/model_CNN_digits.ipynb)
 
 ## a. Frameworks and libraries used, and why ? 
 For this part, we will use the following frameworks and libraries: 
@@ -121,17 +121,19 @@ We notice that we have more than satisfactory results, since we have an accuracy
 
 \newpage
 # II. Handwritten character model creation, training and testing
+This part refers to the following Jupiter Notebook: [model_CNN_characters.ipynb](https://github.com/alexisdacosta/handwritten-character-sequence-recognition/blob/master/notebooks/model_CNN_characters.ipynb)
+
 ## a. Frameworks and libraries used, and why ? 
-Same that 1st part
+Same that first part
 
 ## b. Dataset manipulation
 We use a different dataset. We do the same manipulation as in the first part, except that we get our datasets directly from 2 .csv files obtained from the Kaggle website. We then apply some small mathematical operations so that our model fits these data 
 
 ## c. Model creation
-Same that 1st part
+Same that first part
 
 ## d. Model training
-Same that 1st part but with more epoachs (30). This takes about 30 minutes.
+Same that first part but with more epoachs (30). This takes about 30 minutes.
 
 ## e. Model testing
 Then, we test our model with the test sub dataset : 
@@ -149,7 +151,9 @@ We notice that we have more than satisfactory results, since we have an accuracy
 
 
 \newpage
-# III. Sequence character detection and recognition by using of Computer Vision
+# III. Sequence character detection and recognition
+This part refers to the following Jupiter Notebook: [sequence_characters_detection.ipynb](https://github.com/alexisdacosta/handwritten-character-sequence-recognition/blob/master/notebooks/sequence_characters_detection.ipynb)
+
 ## a. Frameworks and libraries used, and why ? 
 For this part, we will use the following frameworks and libraries: 
 
@@ -166,7 +170,7 @@ For the character sequence detection, we perform a first pre-processing step. Th
 Then, we pass each image in the model to have a prediction.
 
 ## f. Results
-There is an exemple for this image handwritten by us who represent 351 : 
+There is an exemple for this image handwritten by us who represent 'GN4H' : 
 
 ![Image Original](assets/img12.png)
 
@@ -183,5 +187,8 @@ There is an exemple for this image handwritten by us who represent 351 :
 # Conclusion 
 
 ## Results
+We can see, that we have rather convincing results for the detection of numbers, and a little less convincing for letters and numbers, due to the larger number of possible label classes. The CNN model allowed us to have the best results. 
+For the recognition of sequences, we used the following method : the segmentation of the image into several sub-images containing a single character. By using it, depending on the quality of the pre-processing, we obtain very good results. 
 
 ## To improve
+A other methode exist. This methode is to generate a new dataset containing directly sequences, and let the CNN recognize each character by browsing the whole sub-layer. Maybe we can have better results with this method. 
