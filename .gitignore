@@ -8,3 +8,5 @@ demo/api/public
 demo/api/__pycache__
 .DS_Store
 .old/
+demo/api
+demo/client
